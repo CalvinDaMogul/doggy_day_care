@@ -4,6 +4,7 @@ const employeeShape = PropTypes.shape({
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
+  trait: PropTypes.string.isRequired,
 });
 
 export default { employeeShape };
