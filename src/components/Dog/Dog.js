@@ -15,10 +15,11 @@ class Dog extends React.Component {
       return (
           <div className="dog col-3">
               <div className="card">
+                  <h5 className="card-title">Name: {dog.name}</h5>
               <img src={dog.imageUrl} className="card-img-top" alt=""/>
               <div className="card-body">
-                  <h5 className="card-title">{dog.name}</h5>
-                  <p className="card-text">{dog.gender}</p>
+                  <p className="card-text">Gender: {dog.gender}</p>
+                  <p className="card-text">Trait: {dog.trait}</p>
               </div>
               </div>
           </div>

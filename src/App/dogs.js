@@ -5,6 +5,7 @@ const dogs = [
     disposition: 'happy',
     imageUrl: 'https://americanbullydaily.com/wp-content/uploads/2018/04/This-Pitbull-is-Not-Dangerous.jpg',
     gender: 'male',
+    trait: 'strong',
   },
 
   {
@@ -13,6 +14,7 @@ const dogs = [
     disposition: 'rude',
     imageUrl: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/08/rottweiler-detail.jpg?bust=1535566466&width=355',
     gender: 'female',
+    trait: 'charismatic',
   },
 
   {
@@ -20,6 +22,7 @@ const dogs = [
     name: 'Desus',
     imageUrl: 'https://www.pets4homes.co.uk/images/breeds/299/large/7572a6c9049511d3981b578aad84258d.jpg',
     gender: 'male',
+    trait: 'will-power',
   },
 
   {
@@ -27,6 +30,7 @@ const dogs = [
     name: 'Mero',
     imageUrl: 'https://petaware.com/wp-content/uploads/2018/05/beagle.jpg',
     gender: 'male',
+    trait: 'adventurous',
   },
 ];
 
