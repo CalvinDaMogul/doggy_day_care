@@ -23,6 +23,7 @@ class App extends React.Component {
     return (
     <div className="App">
       <h1 id="Doggy">Doggy Day Care</h1>
+      <p id="Phrase">Where Every Dog Matters...</p>
     <DogComponent dogs={dogs} />
     <h1 id="Staff">Employees</h1>
     <EmployeeComponent employees={employees} />
