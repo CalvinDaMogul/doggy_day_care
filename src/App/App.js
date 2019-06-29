@@ -1,35 +1,50 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import './App.css';
-import myDogs from './dogs';
-import myEmployees from './employees';
+import firebase from 'firebase/app';
 
-import DogComponent from '../components/DogComponent/DogComponent';
-import EmployeeComponent from '../components/EmployeeComponent/EmployeeComponent';
+import Auth from '../components/Auth/Auth';
+import Home from '../components/Home/Home';
+import MyNavbar from '../components/MyNavbar/MyNavbar';
+import fbConnection from '../helpers/data/connections';
 
+fbConnection();
 
 class App extends React.Component {
   state = {
-    dogs: [],
-    employees: [],
-  };
+    authed: false,
+  }
 
   componentDidMount() {
-    this.setState({ dogs: myDogs, employees: myEmployees });
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ authed: true });
+      } else {
+        this.setState({ authed: false });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.removeListener();
   }
 
   render() {
-    const { dogs, employees } = this.state;
+    const { authed } = this.state;
+    const loadComponent = () => {
+      if (authed) {
+        return (
+          <Home />
+        );
+      }
+      return <Auth />;
+    };
     return (
     <div className="App">
-      <h1 id="Doggy">Doggy Day Care</h1>
-      <p id="Phrase">Where Every Dog Matters...</p>
-    <DogComponent dogs={dogs} />
-    <h1 id="Staff">Employees</h1>
-    <EmployeeComponent employees={employees} />
+      <MyNavbar authed={authed} />
+      {loadComponent()}
     </div>
     );
   }
 }
+
 
 export default App;
