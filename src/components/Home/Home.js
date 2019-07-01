@@ -7,6 +7,9 @@ import myEmployees from '../Employee/Employee';
 import DogComponent from '../DogComponent/DogComponent';
 import EmployeeComponent from '../EmployeeComponent/EmployeeComponent';
 
+import dogData from '../../helpers/data/dogData';
+import employeeData from '../../helpers/data/employeeData';
+
 
 class Home extends React.Component {
   state = {
@@ -15,8 +18,16 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({ dogs: myDogs, employees: myEmployees });
+    // this.setState({ dogs: myDogs, employees: myEmployees });
+    dogData.getDogs()
+      .then(dogs => this.setState({ dogs }))
+      .catch(err => console.error('could not get dogs', err));
+
+    employeeData.getEmployees()
+      .then(employees => this.setState({ employees }))
+      .catch(err => console.error('could not get employees'));
   }
+
 
   render() {
     const { dogs, employees } = this.state;

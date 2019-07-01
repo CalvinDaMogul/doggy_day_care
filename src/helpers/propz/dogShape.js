@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 
+
 const dogShape = PropTypes.shape({
   dogId: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
