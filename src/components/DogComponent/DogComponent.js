@@ -13,7 +13,7 @@ class DogComponent extends React.Component {
     render() {
       const { dogs } = this.props;
       const makeDogs = dogs.map(dog => (
-            <Dog key={dog.id} dog={dog} />
+            <Dog key={dog.dogId} dog={dog} />
       ));
 
       return (
