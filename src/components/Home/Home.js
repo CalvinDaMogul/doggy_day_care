@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-// import '/Home.scss';
+import './Home.scss';
 import myDogs from '../Dog/Dog';
 import myEmployees from '../Employee/Employee';
 
