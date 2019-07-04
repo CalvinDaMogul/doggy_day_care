@@ -1,9 +1,11 @@
 import React from 'react';
 import firebase from 'firebase/app';
+import 'firebase/auth';
 
 import Auth from '../components/Auth/Auth';
 import Home from '../components/Home/Home';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
+
 import fbConnection from '../helpers/data/connections';
 
 fbConnection();
